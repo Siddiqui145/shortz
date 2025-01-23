@@ -173,9 +173,9 @@ class LoginSheet extends StatelessWidget {
       }
 
       // Update email if it's available and not already set
-      if (userEmail.isNotEmpty && firebaseUser?.email == null) {
+      if (userEmail!.isNotEmpty && firebaseUser?.email == null) {
         print('Updating email... ${userEmail}');
-        await firebaseUser?.verifyBeforeUpdateEmail(userEmail!);
+        await firebaseUser?.verifyBeforeUpdateEmail(userEmail);
       }
       Get.back();
       return firebaseUser;
